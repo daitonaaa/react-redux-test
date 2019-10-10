@@ -219,7 +219,8 @@ module.exports = {
       'react-native': 'react-native-web',
 	    '@api': path.resolve(rootFolder, 'src/api'),
 	    '@sagas': path.resolve(rootFolder, 'src/sagas'),
-	    '@client': path.resolve(rootFolder, 'src/client'),
+			'@styles': path.resolve(rootFolder, 'src/styles'),
+			'@client': path.resolve(rootFolder, 'src/client'),
 	    '@helpers': path.resolve(rootFolder, 'src/helpers'),
 	    '@actions': path.resolve(rootFolder, 'src/actions'),
 	    '@reducers': path.resolve(rootFolder, 'src/reducers'),
@@ -261,7 +262,7 @@ module.exports = {
             options: {
               formatter: require.resolve('react-dev-utils/eslintFormatter'),
               eslintPath: require.resolve('eslint'),
-              
+
             },
             loader: require.resolve('eslint-loader'),
           },
@@ -294,7 +295,7 @@ module.exports = {
               customize: require.resolve(
                 'babel-preset-react-app/webpack-overrides'
               ),
-              
+
               plugins: [
                 [
                   require.resolve('babel-plugin-named-asset-import'),
@@ -332,7 +333,7 @@ module.exports = {
               cacheDirectory: true,
               // Save disk space when time isn't as important
               cacheCompression: true,
-              
+
               // If an error happens in a package, it's possible to be
               // because it was compiled. Thus, we don't want the browser
               // debugger to show the original code. Instead, the code
@@ -373,7 +374,7 @@ module.exports = {
           // as in the CSS routine, except that "sass-loader" runs first
           // to compile SASS files into CSS.
           // By default we support SASS Modules with the
-          // extensions .module.scss or .module.sass
+          // extensions .module.styles or .module.sass
           {
             test: sassRegex,
             exclude: sassModuleRegex,
@@ -391,7 +392,7 @@ module.exports = {
             sideEffects: true,
           },
           // Adds support for CSS Modules, but using SASS
-          // using the extension .module.scss or .module.sass
+          // using the extension .module.styles or .module.sass
           {
             test: sassModuleRegex,
             loader: getStyleLoaders(

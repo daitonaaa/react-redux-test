@@ -144,12 +144,13 @@ module.exports = {
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
       'react-native': 'react-native-web',
 	    '@api': path.resolve(rootFolder, 'src/api'),
-	    '@sagas': path.resolve(rootFolder, 'src/sagas'),
-	    '@client': path.resolve(rootFolder, 'src/client'),
-	    '@actions': path.resolve(rootFolder, 'src/actions'),
-	    '@helpers': path.resolve(rootFolder, 'src/helpers'),
-	    '@reducers': path.resolve(rootFolder, 'src/reducers'),
-	    '@constants': path.resolve(rootFolder, 'src/constants'),
+			'@sagas': path.resolve(rootFolder, 'src/sagas'),
+			'@styles': path.resolve(rootFolder, 'src/styles'),
+			'@client': path.resolve(rootFolder, 'src/client'),
+			'@actions': path.resolve(rootFolder, 'src/actions'),
+			'@helpers': path.resolve(rootFolder, 'src/helpers'),
+			'@reducers': path.resolve(rootFolder, 'src/reducers'),
+			'@constants': path.resolve(rootFolder, 'src/constants'),
 	    '@components': path.resolve(rootFolder, 'src/components'),
     },
     plugins: [
@@ -187,7 +188,7 @@ module.exports = {
             options: {
               formatter: require.resolve('react-dev-utils/eslintFormatter'),
               eslintPath: require.resolve('eslint'),
-              
+
             },
             loader: require.resolve('eslint-loader'),
           },
@@ -220,7 +221,7 @@ module.exports = {
               customize: require.resolve(
                 'babel-preset-react-app/webpack-overrides'
               ),
-              
+
               plugins: [
                 [
                   require.resolve('babel-plugin-named-asset-import'),
@@ -260,7 +261,7 @@ module.exports = {
               cacheDirectory: true,
               // Don't waste time on Gzipping the cache
               cacheCompression: false,
-              
+
               // If an error happens in a package, it's possible to be
               // because it was compiled. Thus, we don't want the browser
               // debugger to show the original code. Instead, the code
@@ -291,18 +292,18 @@ module.exports = {
               getLocalIdent: getCSSModuleLocalIdent,
             }),
           },
-          // Opt-in support for SASS (using .scss or .sass extensions).
+          // Opt-in support for SASS (using .styles or .sass extensions).
           // Chains the sass-loader with the css-loader and the style-loader
           // to immediately apply all styles to the DOM.
           // By default we support SASS Modules with the
-          // extensions .module.scss or .module.sass
+          // extensions .module.styles or .module.sass
           {
             test: sassRegex,
             exclude: sassModuleRegex,
             use: getStyleLoaders({ importLoaders: 2 }, 'sass-loader'),
           },
           // Adds support for CSS Modules, but using SASS
-          // using the extension .module.scss or .module.sass
+          // using the extension .module.styles or .module.sass
           {
             test: sassModuleRegex,
             use: getStyleLoaders(

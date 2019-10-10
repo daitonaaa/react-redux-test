@@ -7,4 +7,5 @@ export const setUsersData = (users) => ({
 
 export const setUsersFetching = (status) => ({
 	type: actionTypes.USERS_SET_FETCHING_STATUS,
+	status,
 });

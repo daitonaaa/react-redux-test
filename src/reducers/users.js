@@ -11,16 +11,16 @@ const initialState = Immutable.fromJS({
 
 const users = (state = initialState, action) => {
 	switch (action.type) {
-		
+
 		case actionTypes.USERS_SET_FETCHING_STATUS:
 			return state.set('fetching', action.status);
-			
+
 		case actionTypes.USERS_SET_DATA:
 			return state.merge({
 				fetching: false,
 				data: action.users,
 			});
-		
+
 		default:
 			return state;
 	}

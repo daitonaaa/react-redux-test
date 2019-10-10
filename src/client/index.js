@@ -7,6 +7,8 @@ import * as serviceWorker from '../serviceWorker';
 import rootSaga from "@sagas";
 import Users from '@components/Users';
 
+import '@styles/normalize.scss';
+
 const store = configureStore(window.__INITIAL_STATE__ || {});
 store.runSaga(rootSaga);
 
