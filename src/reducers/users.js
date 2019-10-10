@@ -5,7 +5,7 @@ import * as actionTypes from '@constants/actionTypes';
 
 const initialState = Immutable.fromJS({
 	data: [],
-	fetching: false,
+	fetching: true,
 });
 
 

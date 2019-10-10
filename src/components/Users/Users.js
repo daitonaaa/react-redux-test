@@ -15,8 +15,7 @@ import {
 import Item from './Item';
 
 
-const Users = (props) => {
-	const { fetching, dispatch, data } = props;
+const Users = ({ fetching, dispatch, data }) => {
 
 	useEffect(() => {
 		dispatch({ type: 'USERS_FETCH' })
